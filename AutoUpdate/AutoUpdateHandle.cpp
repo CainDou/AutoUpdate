@@ -286,7 +286,7 @@ void CAutoUpdateHandle::CheckFile()
 
 void CAutoUpdateHandle::UpdateFileState(string strFileName)
 {
-	Sleep(1000);
+	Sleep(500);
 	m_DiffSet.erase(strFileName);
 	m_GetSet.insert(strFileName);
 	if (!m_DiffSet.empty())
@@ -303,7 +303,7 @@ void CAutoUpdateHandle::UpdateFileState(string strFileName)
 			sprintf_s(strDstFile, ".\\%s", it.c_str());
 			BOOL bRes = MoveFileExA(strSrcFile, strDstFile,
 				MOVEFILE_REPLACE_EXISTING | MOVEFILE_WRITE_THROUGH);
-			Sleep(1000);
+			Sleep(500);
 		}
 		if (m_DiffSet.empty())
 		{
